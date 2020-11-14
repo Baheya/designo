@@ -1,65 +1,81 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Button from '../components/Button';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>Designo Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+      <main>
+        <ul>
+          <li>Our Company</li>
+          <li>Locations</li>
+          <li>Contact</li>
+        </ul>
+        <section>
+          <h1>Award-winning custom designs and digital branding solutions</h1>
+          <p>
+            With over 10 years in the industry, we are experienced in creating
+            fully responsive websites, app design, and engaging brand
+            experiences. Find out more about our services.
+          </p>
+          <Button modifiers={['onDark']}>LEARN MORE</Button>
+        </section>
+        <section>
+          <ul>
+            <li>Web Design View Projects</li>
+            <li>App Design View Projects</li>
+            <li>Graphic Design View Projects</li>
+          </ul>
+        </section>
+        <section>
+          <ul>
+            <li>
+              Passionate Each project starts with an in-depth brand research to
+              ensure we only create products that serve a purpose. We merge art,
+              design, and technology into exciting new solutions.
+            </li>
+            <li>
+              Resourceful Everything that we do has a strategic purpose. We use
+              an agile approach in all of our projects and value customer
+              collaboration. It guarantees superior results that fulfill our
+              clients’ needs.
+            </li>
+            <li>
+              Friendly We are a group of enthusiastic folks who know how to put
+              people first. Our success depends on our customers, and we strive
+              to give them the best experience a company can provide.
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Let’s talk about your project</h2>
+          <p>
+            Ready to take it to the next level? Contact us today and find out
+            how our expertise can help your business grow. Get in touch
+          </p>
+        </section>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+      <footer>
+        <ul>
+          <li>Our company</li>
+          <li>Locations</li>
+          <li>Contact</li>
+        </ul>
+        <div>
+          <p>Designo Central Office</p>
+          <p>3886 Wellington Street</p>
+          <p>Toronto, Ontario M9C 3J5</p>
+        </div>
+        <div>
+          <p>Contact Us (Central Office)</p>
+          <p>P : +1 253-863-8967</p>
+          <p>M : contact@designo.co</p>
+        </div>
       </footer>
-    </div>
-  )
+    </>
+  );
 }
