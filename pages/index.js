@@ -1,5 +1,19 @@
 import Head from 'next/head';
 import Button from '../components/Button';
+import Card from '../components/Card';
+import styled from 'styled-components';
+import { white } from '../utils';
+import { BgPatternMobile } from '../assets/shared/mobile/bgPatternMobile.js';
+
+const H1 = styled.h1`
+  color: ${white.primary};
+  text-align: center;
+`;
+
+const Para = styled.p`
+  color: ${white.primary};
+  text-align: center;
+`;
 
 export default function Home() {
   return (
@@ -16,13 +30,31 @@ export default function Home() {
           <li>Contact</li>
         </ul>
         <section>
-          <h1>Award-winning custom designs and digital branding solutions</h1>
-          <p>
-            With over 10 years in the industry, we are experienced in creating
-            fully responsive websites, app design, and engaging brand
-            experiences. Find out more about our services.
-          </p>
-          <Button modifiers={['onDark']}>LEARN MORE</Button>
+          <Card modifiers={['heroCard']}>
+            <div>
+              <H1>
+                Award-winning custom designs and digital branding solutions
+              </H1>
+              <Para>
+                With over 10 years in the industry, we are experienced in
+                creating fully responsive websites, app design, and engaging
+                brand experiences. Find out more about our services.
+              </Para>
+              <Button modifiers={['onDark']}>LEARN MORE</Button>
+            </div>
+            <img
+              style={{
+                zIndex: '-2',
+                position: 'absolute',
+                bottom: '-230px',
+                left: '-70px',
+                clipPath: 'inset(10px 10px 230px 10px)',
+              }}
+              src="/static/image-hero-phone.png"
+              alt=""
+            />
+            <BgPatternMobile />
+          </Card>
         </section>
         <section>
           <ul>
