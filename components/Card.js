@@ -5,6 +5,7 @@ const CARD_MODIFIRES = {
   heroCard: () => `
     height: 843px;
     align-items: start;
+    justify-content: flex-start;
     `,
 };
 
