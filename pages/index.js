@@ -3,7 +3,7 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import styled from 'styled-components';
 import { white } from '../utils';
-import { BgPatternMobile } from '../assets/shared/mobile/bgPatternMobile.js';
+import { BgPatternMobile } from '../static/assets/shared/mobile/bgPatternMobile.js';
 
 const H1 = styled.h1`
   color: ${white.primary};
@@ -13,6 +13,28 @@ const H1 = styled.h1`
 const Para = styled.p`
   color: ${white.primary};
   text-align: center;
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 24px 0;
+`;
+
+const HeroImage = styled.img`
+  position: absolute;
+  top: -90px;
+  left: -100px;
+  width: 570px;
+`;
+
+const ImageWrapper = styled.div`
+  height: 671px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 `;
 
 export default function Home() {
@@ -31,7 +53,7 @@ export default function Home() {
         </ul>
         <section>
           <Card modifiers={['heroCard']}>
-            <div>
+            <ContentWrapper>
               <H1>
                 Award-winning custom designs and digital branding solutions
               </H1>
@@ -41,18 +63,13 @@ export default function Home() {
                 brand experiences. Find out more about our services.
               </Para>
               <Button modifiers={['onDark']}>LEARN MORE</Button>
-            </div>
-            <img
-              style={{
-                zIndex: '-2',
-                position: 'absolute',
-                bottom: '-230px',
-                left: '-70px',
-                clipPath: 'inset(10px 10px 230px 10px)',
-              }}
-              src="/static/image-hero-phone.png"
-              alt=""
-            />
+            </ContentWrapper>
+            <ImageWrapper>
+              <HeroImage
+                src="/static/assets/shared/desktop/image-hero-phone.png"
+                alt=""
+              />
+            </ImageWrapper>
             <BgPatternMobile />
           </Card>
         </section>
