@@ -3,7 +3,6 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import styled from 'styled-components';
 import { white } from '../utils';
-import { BgPatternMobile } from '../static/assets/shared/mobile/bgPatternMobile.js';
 
 const H1 = styled.h1`
   color: ${white.primary};
@@ -13,6 +12,10 @@ const H1 = styled.h1`
 const Para = styled.p`
   color: ${white.primary};
   text-align: center;
+  margin: 14px 0 10px;
+  @media (min-width: 750px) {
+    margin: 20px 60px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -21,20 +24,16 @@ const ContentWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin: 80px 24px 0;
+  @media (min-width: 750px) {
+    margin: 60px 58px 0;
+  }
 `;
 
 const HeroImage = styled.img`
   position: absolute;
-  top: -90px;
-  left: -100px;
-  width: 570px;
-`;
-
-const ImageWrapper = styled.div`
-  height: 671px;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+  left: 50%;
+  top: 135px;
+  transform: translate3d(-50%, 170px, 0);
 `;
 
 export default function Home() {
@@ -64,13 +63,11 @@ export default function Home() {
               </Para>
               <Button modifiers={['onDark']}>LEARN MORE</Button>
             </ContentWrapper>
-            <ImageWrapper>
-              <HeroImage
-                src="/static/assets/shared/desktop/image-hero-phone.png"
-                alt=""
-              />
-            </ImageWrapper>
-            <BgPatternMobile />
+            <HeroImage
+              src="/static/assets/shared/desktop/image-hero-phone.png"
+              alt=""
+            />
+            {/* <BgPatternMobile /> */}
           </Card>
         </section>
         <section>
