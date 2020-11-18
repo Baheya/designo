@@ -1,9 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { primaryFont, typography } from './typography';
-import { normalize } from 'polished';
 
 export const GlobalStyle = createGlobalStyle`
-${normalize()}
 html {
     font-size: 16px;
     box-sizing: border-box;
@@ -11,6 +9,8 @@ html {
 
 *, *:before, *:after {
     box-sizing:inherit;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -20,28 +20,36 @@ body {
 }
 
 h1 {
-    size: ${typography.h1.size};
+  font-size: ${typography.h1.mobile.size};
+  line-height: ${typography.h1.mobile.lineHeight};
+    font-weight: ${typography.h1.weight};
+      @media (min-width: 750px) {
+    font-size: ${typography.h1.size};
     line-height: ${typography.h1.lineHeight};
-    font-weight: ${typography.h1.weight}
+  }
 }
 
 h2 {
-    size: ${typography.h2.size};
+    font-size: ${typography.h2.size};
     line-height: ${typography.h2.lineHeight};
     letter-spacing: ${typography.h2.spacing};
     font-weight: ${typography.h2.weight}
 }
 
 h3 {
-    size: ${typography.h3.size};
+    font-size: ${typography.h3.size};
     line-height: ${typography.h3.lineHeight};
     letter-spacing: ${typography.h3.spacing};
     font-weight: ${typography.h3.weight}
 }
 
 p {
-    size: ${typography.paragraph.size};
+    font-size: ${typography.paragraph.mobile.size};
+    line-height: ${typography.paragraph.mobile.lineHeight};
+    font-weight: ${typography.paragraph.weight};
+@media (min-width: 750px) {
+    font-size: ${typography.paragraph.size};
     line-height: ${typography.paragraph.lineHeight};
-    font-weight: ${typography.paragraph.weight}
+  }
 }
 `;
