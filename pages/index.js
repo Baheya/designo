@@ -7,25 +7,43 @@ import { white } from '../utils';
 const H1 = styled.h1`
   color: ${white.primary};
   text-align: center;
+  @media (min-width: 1200px) {
+    text-align: left;
+  }
 `;
 
 const Para = styled.p`
   color: ${white.primary};
   text-align: center;
-  margin: 14px 0 10px;
+  margin: 30px 20px;
   @media (min-width: 750px) {
     margin: 20px 60px;
+  }
+  @media (min-width: 1200px) {
+    text-align: left;
+    margin: 28px 0 40px;
+  }
+`;
+
+const CardWrapper = styled.div`
+  height: 843px;
+  @media (min-width: 1200px) {
+    height: 640px;
   }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin: 80px 24px 0;
   @media (min-width: 750px) {
     margin: 60px 58px 0;
+  }
+  @media (min-width: 1200px) {
+    max-width: 540px;
+    align-items: flex-start;
+    margin: 145px 95px;
   }
 `;
 
@@ -34,6 +52,19 @@ const HeroImage = styled.img`
   left: 50%;
   top: 135px;
   transform: translate3d(-50%, 170px, 0);
+  @media (min-width: 1200px) {
+    left: 80%;
+    top: -30%;
+  }
+`;
+
+const MainWrapper = styled.main`
+  @media (min-width: 1200px) {
+    padding: 0 165px;
+  }
+  @media (min-width: 750px) {
+    padding: 0 40px;
+  }
 `;
 
 export default function Home() {
@@ -43,32 +74,34 @@ export default function Home() {
         <title>Designo Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
+      <nav>
         <ul>
           <li>Our Company</li>
           <li>Locations</li>
           <li>Contact</li>
         </ul>
+      </nav>
+      <MainWrapper>
         <section>
-          <Card modifiers={['heroCard']}>
-            <ContentWrapper>
-              <H1>
-                Award-winning custom designs and digital branding solutions
-              </H1>
-              <Para>
-                With over 10 years in the industry, we are experienced in
-                creating fully responsive websites, app design, and engaging
-                brand experiences. Find out more about our services.
-              </Para>
-              <Button modifiers={['onDark']}>LEARN MORE</Button>
-            </ContentWrapper>
-            <HeroImage
-              src="/static/assets/shared/desktop/image-hero-phone.png"
-              alt=""
-            />
-            {/* <BgPatternMobile /> */}
-          </Card>
+          <CardWrapper>
+            <Card modifiers={['heroCard']}>
+              <ContentWrapper>
+                <H1>
+                  Award-winning custom designs and digital branding solutions
+                </H1>
+                <Para>
+                  With over 10 years in the industry, we are experienced in
+                  creating fully responsive websites, app design, and engaging
+                  brand experiences. Find out more about our services.
+                </Para>
+                <Button modifiers={['onDark']}>LEARN MORE</Button>
+              </ContentWrapper>
+              <HeroImage
+                src="/static/assets/shared/desktop/image-hero-phone.png"
+                alt="A decorative image of a phone."
+              />
+            </Card>
+          </CardWrapper>
         </section>
         <section>
           <ul>
@@ -104,7 +137,7 @@ export default function Home() {
             how our expertise can help your business grow. Get in touch
           </p>
         </section>
-      </main>
+      </MainWrapper>
       <footer>
         <ul>
           <li>Our company</li>

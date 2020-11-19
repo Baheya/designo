@@ -4,13 +4,12 @@ import { peach } from '../utils';
 
 const CARD_MODIFIRES = {
   heroCard: () => `
-    height: 843px;
     align-items: start;
     justify-content: flex-start;
     background-image: url('../static/assets/home/desktop/bg-pattern-hero-home.svg');
-  background-repeat: no-repeat;
-  background-position: right;
-  background-color: ${peach.primary};
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: ${peach.primary};
     `,
 };
 
@@ -27,7 +26,6 @@ const Card = styled.div`
     flex-direction: row;
   }
   @media (min-width: 750px) {
-    margin: 0 40px;
     border-radius: 15px;
   }
   ${applyStyleModifiers(CARD_MODIFIRES)}
