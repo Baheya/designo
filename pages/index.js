@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import Button from '../components/Button';
-import Card from '../components/Card';
+import { Button, Card } from '../components';
 import styled from 'styled-components';
 import { white } from '../utils';
 
@@ -74,13 +73,6 @@ export default function Home() {
         <title>Designo Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav>
-        <ul>
-          <li>Our Company</li>
-          <li>Locations</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
       <MainWrapper>
         <section>
           <CardWrapper>
