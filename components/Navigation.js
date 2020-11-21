@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 
 const NavBar = styled.nav`
   @media (min-width: 750px) {
@@ -19,7 +20,7 @@ const Menu = styled.ul`
 
 const MenuItem = styled.li`
   width: 100%;
-  display: none;
+  display: ${(props) => (props.show ? 'block' : 'none')};
   order: 3;
   background-color: #000000;
   text-align: left;
@@ -66,7 +67,21 @@ const MenuLink = styled.a`
   }
 `;
 
+const MenuButton = styled.button`
+  background: none;
+  border: 0;
+  display: block;
+  line-height: 1;
+  cursor: pointer;
+`;
+
 const Navigation = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setOpenMenu(!openMenu);
+  };
+
   return (
     <NavBar>
       <Menu>
@@ -75,21 +90,33 @@ const Navigation = () => {
             <Logo src="/static/assets/shared/desktop/logo-dark.png" />
           </MenuLink>
         </LogoItem>
-        <MenuItem>
+        <MenuItem show={openMenu ? true : false}>
           <MenuLink href="/company">OUR COMPANY</MenuLink>
         </MenuItem>
-        <MenuItem>
+        <MenuItem show={openMenu ? true : false}>
           <MenuLink href="/locations">LOCATIONS</MenuLink>
         </MenuItem>
-        <MenuItem>
+        <MenuItem show={openMenu ? true : false}>
           <MenuLink href="/contact">CONTACT</MenuLink>
         </MenuItem>
-        <ToggleMenuIcons onClick={() => toggleMenu()}>
-          <svg width="24" height="20" xmlns="http://www.w3.org/2000/svg">
-            <g fill="#1D1C1E" fill-rule="evenodd">
-              <path d="M0 0h24v4H0zM0 8h24v4H0zM0 16h24v4H0z" />
-            </g>
-          </svg>
+        <ToggleMenuIcons>
+          <MenuButton onClick={() => toggleMenu()}>
+            {!openMenu ? (
+              <svg width="24" height="20" xmlns="http://www.w3.org/2000/svg">
+                <g fill="#1D1C1E" fillRule="evenodd">
+                  <path d="M0 0h24v4H0zM0 8h24v4H0zM0 16h24v4H0z" />
+                </g>
+              </svg>
+            ) : (
+              <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.071.1L19.9 2.93l-7.071 7.07 7.071 7.072-2.828 2.828L10 12.828l-7.071 7.071L.1 17.071 7.17 10 .102 2.929 2.929.1l7.07 7.07 7.072-7.07z"
+                  fill="#1D1C1E"
+                  fillRule="evenodd"
+                />
+              </svg>
+            )}
+          </MenuButton>
         </ToggleMenuIcons>
       </Menu>
     </NavBar>
