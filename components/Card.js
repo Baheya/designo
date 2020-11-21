@@ -31,4 +31,4 @@ const Card = styled.div`
   ${applyStyleModifiers(CARD_MODIFIRES)}
 `;
 
-export default Card;
+export { Card };

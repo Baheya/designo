@@ -34,4 +34,4 @@ const Button = styled.button`
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
-export default Button;
+export { Button };
