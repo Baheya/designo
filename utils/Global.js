@@ -29,6 +29,10 @@ h1 {
   }
 }
 
+ul {
+  list-style: none;
+}
+
 h2 {
     font-size: ${typography.h2.size};
     line-height: ${typography.h2.lineHeight};
