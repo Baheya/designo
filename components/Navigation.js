@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
+import { peach } from '../utils';
 
 const NavBar = styled.nav`
   @media (min-width: 750px) {
@@ -26,7 +27,7 @@ const MenuItem = styled.li`
   text-align: left;
   padding: 10px;
   @media (min-width: 750px) {
-    padding: 0 10px;
+    padding: 0 30px;
     text-align: center;
     background-color: #ffffff;
     display: block;
@@ -41,6 +42,10 @@ const LogoItem = styled.li`
   background-color: #ffffff;
   margin: 35px 0 35px 24px;
   margin-right: auto;
+  @media (min-width: 750px) {
+    margin: 35px 0 35px 0;
+    margin-right: auto;
+  }
 `;
 
 const Logo = styled.img`
@@ -62,6 +67,10 @@ const ToggleMenuIcons = styled.li`
 const MenuLink = styled.a`
   text-decoration: none;
   color: #ffffff;
+  &:hover {
+    color: ${peach.primary};
+    text-decoration: underline;
+  }
   @media (min-width: 750px) {
     color: #000000;
   }
@@ -75,12 +84,18 @@ const MenuButton = styled.button`
   cursor: pointer;
 `;
 
+const Para = styled.p`
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin: 5px;
+  @media (min-width: 750px) {
+    font-size: 14px;
+    margin: 0;
+  }
+`;
+
 const Navigation = () => {
   const [openMenu, setOpenMenu] = useState(false);
-
-  const toggleMenu = () => {
-    setOpenMenu(!openMenu);
-  };
 
   return (
     <NavBar>
@@ -91,16 +106,22 @@ const Navigation = () => {
           </MenuLink>
         </LogoItem>
         <MenuItem show={openMenu ? true : false}>
-          <MenuLink href="/company">OUR COMPANY</MenuLink>
+          <MenuLink href="/company" onClick={() => setOpenMenu(!openMenu)}>
+            <Para>OUR COMPANY</Para>
+          </MenuLink>
         </MenuItem>
         <MenuItem show={openMenu ? true : false}>
-          <MenuLink href="/locations">LOCATIONS</MenuLink>
+          <MenuLink href="/locations" onClick={() => setOpenMenu(!openMenu)}>
+            <Para>LOCATIONS</Para>
+          </MenuLink>
         </MenuItem>
         <MenuItem show={openMenu ? true : false}>
-          <MenuLink href="/contact">CONTACT</MenuLink>
+          <MenuLink href="/contact" onClick={() => setOpenMenu(!openMenu)}>
+            <Para>CONTACT</Para>
+          </MenuLink>
         </MenuItem>
         <ToggleMenuIcons>
-          <MenuButton onClick={() => toggleMenu()}>
+          <MenuButton onClick={() => setOpenMenu(!openMenu)}>
             {!openMenu ? (
               <svg width="24" height="20" xmlns="http://www.w3.org/2000/svg">
                 <g fill="#1D1C1E" fillRule="evenodd">
