@@ -10,6 +10,7 @@ const CARD_MODIFIRES = {
     background-repeat: no-repeat;
     background-position: right;
     background-color: ${peach.primary};
+    border-radius: 0;
     `,
 };
 
@@ -22,13 +23,28 @@ const Card = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  @media (min-width: 1200px) {
-    flex-direction: row;
-  }
+  border-radius: 15px;
   @media (min-width: 750px) {
     border-radius: 15px;
   }
   ${applyStyleModifiers(CARD_MODIFIRES)}
 `;
 
-export { Card };
+const InfoCard = styled.li`
+  width: auto;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  @media (min-width: 750px) {
+    flex-direction: row;
+  }
+  @media (min-width: 1200px) {
+    flex-direction: column;
+  }
+`;
+
+export { Card, InfoCard };
