@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Button, Card, InfoCard } from '../components';
+import { Button, Card, InfoCard, Footer } from '../components';
 import {
   ResourcefulIllustration,
   FriendlyIllustration,
@@ -172,23 +172,7 @@ export default function Home() {
           </p>
         </section>
       </main>
-      <footer>
-        <ul>
-          <li>Our company</li>
-          <li>Locations</li>
-          <li>Contact</li>
-        </ul>
-        <div>
-          <p>Designo Central Office</p>
-          <p>3886 Wellington Street</p>
-          <p>Toronto, Ontario M9C 3J5</p>
-        </div>
-        <div>
-          <p>Contact Us (Central Office)</p>
-          <p>P : +1 253-863-8967</p>
-          <p>M : contact@designo.co</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
