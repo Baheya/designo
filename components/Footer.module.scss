@@ -1,0 +1,54 @@
+@import '../utils/colors';
+
+.footer {
+  background-color: $primaryBlack;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 64px 24px;
+  .logo {
+    width: 202px;
+    height: auto;
+    margin-bottom: 64px;
+    @media (min-width: 750px) {
+      margin-bottom: 0;
+    }
+  }
+  .footer__items--nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 750px) {
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+    }
+    li {
+      margin: 16px 0;
+      .footer__link {
+        text-decoration: none;
+        color: $primaryWhite;
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .footer__items--contact {
+    @extend .footer__items--nav;
+    li {
+      margin-bottom: 40px;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      line-height: 24px;
+    }
+  }
+  .footer__items--social {
+    display: flex;
+    li {
+      margin: 0 8px;
+    }
+  }
+}
