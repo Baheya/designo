@@ -1,0 +1,27 @@
+@import '../utils/typography.scss';
+@import '../utils/colors.scss';
+
+.button {
+  padding: 18px 26px;
+  font-size: map-get($paragraph, size);
+  border-radius: 10px;
+  width: 152px;
+  height: 56px;
+  cursor: pointer;
+  font-family: $primaryFont;
+  border: none;
+  transition: background-color 0.2s linear, color 0.2s linear;
+  text-transform: uppercase;
+  background-color: $primaryPeach;
+  color: $primaryWhite;
+  z-index: 1;
+  &--onDark {
+    @extend .button;
+    background-color: $primaryWhite;
+    color: $primaryBlack;
+  }
+  &:hover {
+    background-color: $secondaryPeach;
+    color: $primaryWhite;
+  }
+}

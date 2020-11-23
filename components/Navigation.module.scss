@@ -1,0 +1,89 @@
+@import '../utils/colors';
+
+.navbar {
+  @media (min-width: 750px) {
+    padding: 65px 40px;
+  }
+  @media (min-width: 1200px) {
+    padding: 65px 165px;
+  }
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    .logo__item {
+      order: 0;
+      width: auto;
+      display: block;
+      background-color: #ffffff;
+      margin: 35px 0 35px 24px;
+      margin-right: auto;
+      @media (min-width: 750px) {
+        margin: 35px 0 35px 0;
+        margin-right: auto;
+      }
+      .logo {
+        width: 200px;
+        height: 100%;
+      }
+    }
+    .menu__item {
+      width: 100%;
+      display: none;
+      order: 3;
+      background-color: #000000;
+      text-align: left;
+      padding: 10px;
+      &--visible {
+        @extend .menu__item;
+        display: block;
+      }
+      @media (min-width: 750px) {
+        padding: 0 30px;
+        text-align: center;
+        background-color: #ffffff;
+        display: block;
+        width: auto;
+      }
+    }
+    .menu__link {
+      text-decoration: none;
+      color: #ffffff;
+      &:hover {
+        color: $primaryPeach;
+        text-decoration: underline;
+      }
+      @media (min-width: 750px) {
+        color: #000000;
+      }
+    }
+    .para {
+      font-size: 24px;
+      letter-spacing: 2px;
+      margin: 5px;
+      @media (min-width: 750px) {
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+    .toggle__menu__icons {
+      order: 1;
+      width: auto;
+      display: block;
+      background-color: #ffffff;
+      margin: 35px 24px 35px 0;
+      @media (min-width: 750px) {
+        display: none;
+      }
+      .menu__button {
+        background: none;
+        border: 0;
+        display: block;
+        line-height: 1;
+        cursor: pointer;
+      }
+    }
+  }
+}

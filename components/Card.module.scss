@@ -1,0 +1,39 @@
+@import '../utils/colors';
+
+.card {
+  width: auto;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 15px;
+  @media (min-width: 750px) {
+    border-radius: 15px;
+  }
+  &__main {
+    @extend .card;
+    align-items: start;
+    justify-content: flex-start;
+    background-image: url('../static/assets/home/desktop/bg-pattern-hero-home.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: $primaryPeach;
+    border-radius: 0;
+    @media (min-width: 750px) {
+      border-radius: 15px;
+    }
+  }
+  &__info {
+    @extend .card;
+    border-radius: 0;
+    @media (min-width: 750px) {
+      flex-direction: row;
+    }
+    @media (min-width: 1200px) {
+      flex-direction: column;
+    }
+  }
+}
