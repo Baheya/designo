@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  text-align: center;
   border-radius: 15px;
   @media (min-width: 750px) {
     border-radius: 15px;
@@ -34,6 +35,13 @@
     }
     @media (min-width: 1200px) {
       flex-direction: column;
+    }
+  }
+  &--contact {
+    @extend .card;
+    transform: translate3d(0, 30%, 0);
+    @media (min-width: 750px) {
+      transform: translate3d(0, 50%, 0);
     }
   }
 }
