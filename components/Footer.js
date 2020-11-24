@@ -7,9 +7,9 @@ import {
   YoutubeIcon,
 } from '../static/assets/shared/desktop';
 
-const Footer = () => {
+const Footer = (props) => {
   return (
-    <footer className={styles['footer']}>
+    <footer className={styles[`${props.className}`]}>
       <ul className={styles['footer__items--nav']}>
         <li>
           <a href="/">

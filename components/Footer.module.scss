@@ -7,6 +7,14 @@
   justify-content: center;
   align-items: center;
   padding: 64px 24px;
+  @media (min-width: 750px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @media (min-width: 1200px) {
+    padding: 72px 165px;
+  }
   .logo {
     width: 202px;
     height: auto;
@@ -21,12 +29,18 @@
     justify-content: center;
     align-items: center;
     @media (min-width: 750px) {
+      :first-child {
+        margin-right: auto;
+      }
       flex-direction: row;
       width: 100%;
       justify-content: space-between;
     }
     li {
       margin: 16px 0;
+      @media (min-width: 750px) {
+        padding: 0 12px;
+      }
       .footer__link {
         text-decoration: none;
         color: $primaryWhite;
@@ -38,11 +52,22 @@
   }
   .footer__items--contact {
     @extend .footer__items--nav;
+    @media (min-width: 750px) {
+      width: auto;
+    }
+    @media (min-width: 1200px) {
+      li:first-child {
+        margin-right: 130px;
+      }
+    }
     li {
       margin-bottom: 40px;
       color: rgba(255, 255, 255, 0.5);
       text-align: center;
       line-height: 24px;
+      @media (min-width: 1200px) {
+        text-align: left;
+      }
     }
   }
   .footer__items--social {
@@ -50,5 +75,9 @@
     li {
       margin: 0 8px;
     }
+  }
+  &--with_card {
+    @extend .footer;
+    padding-top: 200px;
   }
 }
