@@ -5,7 +5,7 @@ import {
   FriendlyIllustration,
   PassionateIllustration,
 } from '../static/assets/home/desktop';
-import { CircleBg } from '../static/assets/shared/desktop';
+import { CircleBg, ThreeCirclesBg } from '../static/assets/shared/desktop';
 import styles from './index.module.scss';
 
 export default function Home() {
@@ -164,15 +164,21 @@ export default function Home() {
             </InfoCard>
           </ul>
         </section>
-        <section>
-          <h2>Let’s talk about your project</h2>
-          <p>
-            Ready to take it to the next level? Contact us today and find out
-            how our expertise can help your business grow. Get in touch
-          </p>
+        <section className={styles['section__wrapper']}>
+          <Card className="card--contact">
+            <div className={styles['contact__card__content']}>
+              <h2>Let’s talk about your project</h2>
+              <p className={styles['contact__card__text']}>
+                Ready to take it to the next level? Contact us today and find
+                out how our expertise can help your business grow. Get in touch
+              </p>
+              <Button className="button--onDark">Get In Touch</Button>
+            </div>
+            <div className={styles['card__background--peach']} />
+          </Card>
         </section>
       </main>
-      <Footer />
+      <Footer className="footer--with_card" />
     </>
   );
 }

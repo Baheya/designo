@@ -218,5 +218,30 @@
         }
       }
     }
+
+    .card__background--peach {
+      background-image: url('/static/assets/shared/desktop/bg-pattern-three-circles.svg');
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $primaryPeach;
+      z-index: -1;
+      background-size: contain;
+    }
+    .contact__card__content {
+      padding: 64px 24px;
+      h2 {
+        color: $primaryWhite;
+        font-size: 32px;
+        line-height: 36px;
+        margin-bottom: 6px;
+      }
+      .contact__card__text {
+        color: $primaryWhite;
+        font-size: 15px;
+        line-height: 25px;
+        margin-bottom: 32px;
+      }
+    }
   }
 }
