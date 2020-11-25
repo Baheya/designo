@@ -5,7 +5,7 @@ import {
   FriendlyIllustration,
   PassionateIllustration,
 } from '../static/assets/home/desktop';
-import { CircleBg, ThreeCirclesBg } from '../static/assets/shared/desktop';
+import { SmallCircleBg, ThreeCirclesBg } from '../static/assets/shared/desktop';
 import styles from './index.module.scss';
 
 export default function Home() {
@@ -15,30 +15,28 @@ export default function Home() {
         <title>Designo Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles['main__wrapper']}>
+      <div className={styles['main__grid']}>
         <section>
-          <div className={styles['main__card__wrapper']}>
-            <Card className="card__main">
-              <div className={styles['content__wrapper']}>
-                <h1 className={styles['card__title']}>
-                  Award-winning custom designs and digital branding solutions
-                </h1>
-                <p className={styles['card__text']}>
-                  With over 10 years in the industry, we are experienced in
-                  creating fully responsive websites, app design, and engaging
-                  brand experiences. Find out more about our services.
-                </p>
-                <Button className="button--onDark">Learn More</Button>
-              </div>
-              <img
-                className={styles['card__img']}
-                src="/static/assets/shared/desktop/image-hero-phone.png"
-                alt="A decorative image of a phone."
-              />
-            </Card>
-          </div>
+          <Card className="card__main">
+            <div className={styles['content__wrapper']}>
+              <h1 className={styles['card__title']}>
+                Award-winning custom designs and digital branding solutions
+              </h1>
+              <p className={styles['card__text']}>
+                With over 10 years in the industry, we are experienced in
+                creating fully responsive websites, app design, and engaging
+                brand experiences. Find out more about our services.
+              </p>
+              <Button className="button--onDark">Learn More</Button>
+            </div>
+            <img
+              className={styles['card__img']}
+              src="/static/assets/shared/desktop/image-hero-phone.png"
+              alt="A decorative image of a phone."
+            />
+          </Card>
         </section>
-        <section className={styles['section__wrapper']}>
+        <section>
           <ul className={styles['cards__wrapper']}>
             <li className={styles['card__wrapper--grow']}>
               <Card className="card">
@@ -117,12 +115,12 @@ export default function Home() {
             </li>
           </ul>
         </section>
-        <section className={styles['section__wrapper']}>
+        <section>
           <ul className={styles['info__cards__wrapper']}>
             <InfoCard className="card__info">
               <div className={styles['illustration__wrapper']}>
                 <PassionateIllustration />
-                <CircleBg className={styles['circle__background']} />
+                <SmallCircleBg className={styles['circle__background']} />
               </div>
               <div className={styles['content']}>
                 <h3 className={styles['title']}>Passionate</h3>
@@ -136,7 +134,7 @@ export default function Home() {
             <InfoCard className="card__info">
               <div className={styles['illustration__wrapper']}>
                 <ResourcefulIllustration />
-                <CircleBg className={styles['circle__background']} />
+                <SmallCircleBg className={styles['circle__background']} />
               </div>
               <div className={styles['content']}>
                 <h3 className={styles['title']}>Resourceful</h3>
@@ -151,7 +149,7 @@ export default function Home() {
             <InfoCard className="card__info">
               <div className={styles['illustration__wrapper']}>
                 <FriendlyIllustration />
-                <CircleBg className={styles['circle__background']} />
+                <SmallCircleBg className={styles['circle__background']} />
               </div>
               <div className={styles['content']}>
                 <h3 className={styles['title']}>Friendly</h3>
@@ -164,21 +162,24 @@ export default function Home() {
             </InfoCard>
           </ul>
         </section>
-        <section className={styles['section__wrapper']}>
+        <section>
           <Card className="card--contact">
             <div className={styles['contact__card__content']}>
-              <h2>Let’s talk about your project</h2>
-              <p className={styles['contact__card__text']}>
-                Ready to take it to the next level? Contact us today and find
-                out how our expertise can help your business grow. Get in touch
-              </p>
+              <div>
+                <h2>Let’s talk about your project</h2>
+                <p className={styles['contact__card__text']}>
+                  Ready to take it to the next level? Contact us today and find
+                  out how our expertise can help your business grow. Get in
+                  touch
+                </p>
+              </div>
               <Button className="button--onDark">Get In Touch</Button>
             </div>
             <div className={styles['card__background--peach']} />
           </Card>
         </section>
-      </main>
-      <Footer className="footer--with_card" />
+        <Footer className="footer--with_card" />
+      </div>
     </>
   );
 }
