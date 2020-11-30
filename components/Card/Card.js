@@ -76,4 +76,24 @@ const NavCard = (props) => {
   );
 };
 
-export { SingleCard, ListCard, HeroCard, ProductCard, NavCard, ContactCard };
+const AboutCard = (props) => {
+  return (
+    <ListCard className="card--about">
+      <div className={styles[`bg--${props.bg}`]} />
+      <div className={styles[`card__content--${props.bgTheme}`]}>
+        <h2>{props.title}</h2>
+        <p>{props.text}</p>
+      </div>
+    </ListCard>
+  );
+};
+
+export {
+  SingleCard,
+  ListCard,
+  HeroCard,
+  ProductCard,
+  NavCard,
+  ContactCard,
+  AboutCard,
+};
