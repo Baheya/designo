@@ -79,8 +79,9 @@ const NavCard = (props) => {
 const AboutCard = (props) => {
   return (
     <ListCard className="card--about">
-      <div className={styles[`bg--${props.bg}`]} />
-      <div className={styles[`card__content--${props.bgTheme}`]}>
+      <div className={styles[`img--${props.img}`]} />
+      <div className={styles[`bg--${props.theme}`]} />
+      <div className={styles[`card__content--${props.theme}`]}>
         <h2>{props.title}</h2>
         <p>{props.text}</p>
       </div>
