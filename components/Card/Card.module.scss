@@ -20,7 +20,7 @@
     @media (min-width: 1200px) {
       flex-direction: row;
     }
-    .bg--hero {
+    .img--hero {
       background-image: url('/static/assets/about/mobile/image-about-hero.jpg');
       background-size: cover;
       width: 100%;
@@ -32,7 +32,7 @@
         background-image: url('/static/assets/about/desktop/image-about-hero.jpg');
       }
     }
-    .bg--talent {
+    .img--talent {
       background-image: url('/static/assets/about/mobile/image-world-class-talent.jpg');
       background-size: cover;
       width: 100%;
@@ -44,7 +44,7 @@
         background-image: url('/static/assets/about/desktop/image-world-class-talent.jpg');
       }
     }
-    .bg--realDeal {
+    .img--realDeal {
       background-image: url('/static/assets/about/mobile/image-real-deal.jpg');
       background-size: cover;
       width: 100%;
@@ -56,23 +56,31 @@
         background-image: url('/static/assets/about/desktop/image-real-deal.jpg');
       }
     }
-    .card__content {
+    .bg {
       background-image: url('/static/assets/about/mobile/bg-pattern-hero-about-mobile.svg');
-      text-align: center;
-      padding: 80px 24px;
-      @media (min-width: 1200px) {
-        height: 100%;
-        padding: auto;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      position: absolute;
+      &--primary {
+        @extend .bg;
+        background-color: $primaryPeach;
       }
+      &--secondary {
+        @extend .bg;
+        background-color: #fdf3f0;
+      }
+    }
+    .card__content {
+      text-align: center;
+      margin: 80px 24px;
       &--primary {
         @extend .card__content;
         color: $primaryWhite;
-        background-color: $primaryPeach;
       }
       &--secondary {
         @extend .card__content;
         color: $primaryPeach;
-        background-color: #fdf3f0;
       }
       h2 {
         margin-bottom: 24px;
