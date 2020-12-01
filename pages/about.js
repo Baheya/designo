@@ -7,6 +7,7 @@ import {
   Footer,
   NavCard,
   AboutCard,
+  Location,
 } from '../components';
 
 const AppDesign = () => {
@@ -36,6 +37,13 @@ const AppDesign = () => {
               bg="talent"
               bgTheme="secondary"
             />
+            <li>
+              <ul className={styles['locations__wrapper']}>
+                <Location location="australia" />
+                <Location location="canada" />
+                <Location location="uk" />
+              </ul>
+            </li>
             <AboutCard
               title="The real deal"
               text="As strategic partners in our clients’ businesses, we are ready to take on any challenge as our own.
