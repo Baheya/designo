@@ -21,7 +21,7 @@
   section:nth-child(1) {
     grid-column: 1 / 4;
     grid-row: 1 / 2;
-    ul {
+    .nested__grid {
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 715px 865px 120px 1200px 120px 865px;
@@ -31,8 +31,11 @@
       @media (min-width: 1200px) {
         grid-template-rows: 480px 160px 640px 160px 365px 160px 640px;
       }
-      li:nth-of-type(1) {
+      > li:nth-of-type(1) {
         grid-row: 1 / 2;
+        @media (min-width: 1200px) {
+          flex-direction: row-reverse;
+        }
       }
       li:nth-of-type(2) {
         grid-row: 2 / 3;
@@ -60,6 +63,9 @@
         grid-row: 6 / 7;
         @media (min-width: 750px) {
           grid-row: 7 / 8;
+        }
+        @media (min-width: 1200px) {
+          flex-direction: row-reverse;
         }
       }
     }
