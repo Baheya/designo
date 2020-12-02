@@ -10,7 +10,7 @@ import { ContactCard } from '../Card/Card';
 
 const Footer = (props) => {
   return (
-    <footer className={styles[`${props.className}`]}>
+    <footer className={styles['footer']}>
       <ul className={styles['footer__items--nav']}>
         <li>
           <a href="/">
