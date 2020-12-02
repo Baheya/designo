@@ -5,9 +5,11 @@ import { Navigation } from '../components';
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Navigation />
-      <Component {...pageProps} />
-      <GlobalStyle />
+      <>
+        <Navigation />
+        <Component {...pageProps} />
+        <GlobalStyle />
+      </>
     </ThemeProvider>
   );
 }
