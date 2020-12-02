@@ -51,17 +51,42 @@
       height: 1px;
       overflow: hidden;
     }
+    .input__wrapper {
+      width: 100%;
+      position: relative;
+      .error__message {
+        position: absolute;
+        top: 0;
+        left: 70%;
+        font-size: 12px;
+        line-height: 12px;
+        color: $primaryWhite;
+        .error__icon {
+          padding-left: 5px;
+          img {
+            transform: translateY(5px);
+          }
+        }
+      }
+    }
     input {
       background-color: transparent;
+      width: 100%;
       border: none;
       border-bottom: 1px solid $primaryWhite;
       color: $primaryWhite;
       padding: 10px;
+      outline: none;
+      position: relative;
+      &:focus {
+        border-bottom: 3px solid $primaryWhite;
+      }
     }
     input::placeholder {
       color: $primaryWhite;
+      opacity: 50%;
     }
-    input:last-of-type {
+    input[type='textarea'] {
       padding-bottom: 65px;
     }
     button {
@@ -70,9 +95,6 @@
         margin: 0;
         margin-left: auto;
       }
-      //     @media (min-width: 1200px) {
-      //   text-align: left;
-      // }
     }
   }
 }
