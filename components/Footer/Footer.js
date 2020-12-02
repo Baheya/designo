@@ -6,6 +6,7 @@ import {
   TwitterIcon,
   YoutubeIcon,
 } from '../../static/assets/shared/desktop';
+import { ContactCard } from '../Card/Card';
 
 const Footer = (props) => {
   return (
@@ -69,4 +70,15 @@ const Footer = (props) => {
   );
 };
 
-export { Footer };
+const FooterWithCard = () => {
+  return (
+    <div className={styles['wrapper']}>
+      <section>
+        <ContactCard />
+      </section>
+      <Footer />
+    </div>
+  );
+};
+
+export { Footer, FooterWithCard };
