@@ -1,14 +1,6 @@
 import styles from './about.module.scss';
 import Head from 'next/head';
-import {
-  HeroCard,
-  ProductCard,
-  ContactCard,
-  Footer,
-  NavCard,
-  AboutCard,
-  Location,
-} from '../components';
+import { FooterWithCard, AboutCard, Location } from '../components';
 
 const AppDesign = () => {
   return (
@@ -54,11 +46,8 @@ const AppDesign = () => {
             />
           </ul>
         </section>
-        <section>
-          <ContactCard />
-        </section>
-        <Footer className="footer--with_card" />
       </div>
+      <FooterWithCard />
     </>
   );
 };
