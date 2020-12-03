@@ -1,12 +1,6 @@
 import styles from './graphic-design.module.scss';
 import Head from 'next/head';
-import {
-  HeroCard,
-  ProductCard,
-  ContactCard,
-  Footer,
-  NavCard,
-} from '../components';
+import { HeroCard, ProductCard, FooterWithCard, NavCard } from '../components';
 
 const AppDesign = () => {
   return (
@@ -43,15 +37,12 @@ const AppDesign = () => {
         </section>
         <section>
           <ul>
-            <NavCard title="App Design" bg="appDesign" />
-            <NavCard title="Web Design" bg="webDesign" />
+            <NavCard title="App Design" bg="appDesign" link="app-design" />
+            <NavCard title="Web Design" bg="webDesign" link="web-design" />
           </ul>
         </section>
-        <section>
-          <ContactCard />
-        </section>
-        <Footer className="footer--with_card" />
       </div>
+      <FooterWithCard />
     </>
   );
 };
