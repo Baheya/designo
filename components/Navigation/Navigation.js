@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 
 import styles from './Navigation.module.scss';
 
@@ -9,51 +10,56 @@ const Navigation = () => {
     <nav className={styles['navbar']}>
       <ul className={styles['menu']}>
         <li className={styles['logo__item']}>
-          <a className={styles['menu__link']} href="/">
-            <img
-              className={styles['logo']}
-              src="/static/assets/shared/desktop/logo-dark.png"
-            />
-          </a>
+          <Link href="/">
+            <a className={styles['menu__link']}>
+              <img
+                className={styles['logo']}
+                src="/static/assets/shared/desktop/logo-dark.png"
+              />
+            </a>
+          </Link>
         </li>
         <li
           className={
             openMenu ? styles['menu__item--visible'] : styles['menu__item']
           }
         >
-          <a
-            className={styles['menu__link']}
-            href="/company"
-            onClick={() => setOpenMenu(!openMenu)}
-          >
-            <p className={styles['para']}>OUR COMPANY</p>
-          </a>
+          <Link href="/about">
+            <a
+              className={styles['menu__link']}
+              onClick={() => setOpenMenu(!openMenu)}
+            >
+              <p className={styles['para']}>OUR COMPANY</p>
+            </a>
+          </Link>
         </li>
         <li
           className={
             openMenu ? styles['menu__item--visible'] : styles['menu__item']
           }
         >
-          <a
-            className={styles['menu__link']}
-            href="/locations"
-            onClick={() => setOpenMenu(!openMenu)}
-          >
-            <p className={styles['para']}>LOCATIONS</p>
-          </a>
+          <Link href="/locations">
+            <a
+              className={styles['menu__link']}
+              onClick={() => setOpenMenu(!openMenu)}
+            >
+              <p className={styles['para']}>LOCATIONS</p>
+            </a>
+          </Link>
         </li>
         <li
           className={
             openMenu ? styles['menu__item--visible'] : styles['menu__item']
           }
         >
-          <a
-            className={styles['menu__link']}
-            href="/contact"
-            onClick={() => setOpenMenu(!openMenu)}
-          >
-            <p className={styles['para']}>CONTACT</p>
-          </a>
+          <Link href="/contact">
+            <a
+              className={styles['menu__link']}
+              onClick={() => setOpenMenu(!openMenu)}
+            >
+              <p className={styles['para']}>CONTACT</p>
+            </a>
+          </Link>
         </li>
         <li className={styles['toggle__menu__icons']}>
           <button
