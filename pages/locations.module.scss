@@ -19,6 +19,7 @@
     height: 100%;
     @media (min-width: 750px) {
       border-radius: 15px;
+      max-height: 325px;
     }
   }
   li {
@@ -110,6 +111,9 @@
     z-index: -1;
     @media (min-width: 750px) {
       border-radius: 15px;
+    }
+    @media (min-width: 750px) {
+      background-image: url('/static/assets/shared/desktop/bg-pattern-two-circles.svg');
     }
   }
 }
