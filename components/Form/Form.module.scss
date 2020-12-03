@@ -57,15 +57,33 @@
       .error__message {
         position: absolute;
         top: 0;
-        left: 70%;
+        left: 60%;
         font-size: 12px;
         line-height: 12px;
         color: $primaryWhite;
+        @media (min-width: 750px) {
+          left: 80%;
+        }
+        @media (min-width: 1200px) {
+          left: 70%;
+        }
         .error__icon {
           padding-left: 5px;
           img {
             transform: translateY(5px);
           }
+        }
+        &__name {
+          @extend .error__message;
+        }
+        &__email {
+          @extend .error__message;
+        }
+        &__phone {
+          @extend .error__message;
+        }
+        &__message {
+          @extend .error__message;
         }
       }
     }
