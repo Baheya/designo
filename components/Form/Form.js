@@ -10,23 +10,48 @@ const Form = () => {
     message: '',
   });
 
+  const [errorFields, setErrorFields] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
   const updateForm = (inputName, inputValue) => {
     setForm((prevState) => ({ ...prevState, [inputName]: inputValue }));
+    setErrorFields((prevState) => ({ ...prevState, [inputName]: '' }));
+  };
+
+  const checkEmptyFields = () => {
+    let valid = true;
+    Object.keys(form).map((keyName, i) => {
+      if (form[keyName] === '') {
+        setErrorFields((prevState) => ({ ...prevState, [keyName]: 'Error' }));
+        valid = false;
+        return valid;
+      }
+    });
+    return valid;
   };
 
   const submitForm = (e) => {
     e.preventDefault();
-    if (
-      form.name === '' ||
-      form.email === '' ||
-      form.phone === '' ||
-      form.message === ''
-    ) {
-      console.log('oh no');
-    } else {
-      console.log('yay!');
+    if (checkEmptyFields()) {
+      setLoading(true);
+      setForm({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+      setLoading(false);
+      setSubmitted(true);
     }
   };
+
   return (
     <div className={styles['form__wrapper']}>
       <div className={styles['form__description']}>
@@ -49,15 +74,17 @@ const Form = () => {
             onChange={(e) => updateForm(e.target.name, e.target.value)}
             value={form.name}
           />
-          <p className={styles['error__message']}>
-            Can't be empty
-            <span className={styles['error__icon']}>
-              <img
-                src="../../static/assets/contact/desktop/icon-error.svg"
-                alt="An error icon."
-              />
-            </span>
-          </p>
+          {errorFields.name.length > 0 ? (
+            <p className={styles['error__message__name']}>
+              Can't be empty
+              <span className={styles['error__icon']}>
+                <img
+                  src="../../static/assets/contact/desktop/icon-error.svg"
+                  alt="An error icon."
+                />
+              </span>
+            </p>
+          ) : null}
         </div>
         <div className={styles['input__wrapper']}>
           <label htmlFor="email">Email</label>
@@ -69,15 +96,17 @@ const Form = () => {
             value={form.email}
             onChange={(e) => updateForm(e.target.name, e.target.value)}
           />
-          <p className={styles['error__message']}>
-            Can't be empty
-            <span className={styles['error__icon']}>
-              <img
-                src="../../static/assets/contact/desktop/icon-error.svg"
-                alt="An error icon."
-              />
-            </span>
-          </p>
+          {errorFields.email.length > 0 ? (
+            <p className={styles['error__message__email']}>
+              Can't be empty
+              <span className={styles['error__icon']}>
+                <img
+                  src="../../static/assets/contact/desktop/icon-error.svg"
+                  alt="An error icon."
+                />
+              </span>
+            </p>
+          ) : null}
         </div>
         <div className={styles['input__wrapper']}>
           <label htmlFor="phone">Phone Number</label>
@@ -89,15 +118,17 @@ const Form = () => {
             value={form.phone}
             onChange={(e) => updateForm(e.target.name, e.target.value)}
           />
-          <p className={styles['error__message']}>
-            Can't be empty
-            <span className={styles['error__icon']}>
-              <img
-                src="../../static/assets/contact/desktop/icon-error.svg"
-                alt="An error icon."
-              />
-            </span>
-          </p>
+          {errorFields.phone.length > 0 ? (
+            <p className={styles['error__message__phone']}>
+              Can't be empty
+              <span className={styles['error__icon']}>
+                <img
+                  src="../../static/assets/contact/desktop/icon-error.svg"
+                  alt="An error icon."
+                />
+              </span>
+            </p>
+          ) : null}
         </div>
         <div className={styles['input__wrapper']}>
           <label htmlFor="message">Your Message</label>
@@ -109,17 +140,25 @@ const Form = () => {
             value={form.message}
             onChange={(e) => updateForm(e.target.name, e.target.value)}
           />
-          <p className={styles['error__message']}>
-            Can't be empty
-            <span className={styles['error__icon']}>
-              <img
-                src="../../static/assets/contact/desktop/icon-error.svg"
-                alt="An error icon."
-              />
-            </span>
-          </p>
+          {errorFields.message.length > 0 ? (
+            <p className={styles['error__message__message']}>
+              Can't be empty
+              <span className={styles['error__icon']}>
+                <img
+                  src="../../static/assets/contact/desktop/icon-error.svg"
+                  alt="An error icon."
+                />
+              </span>
+            </p>
+          ) : null}
         </div>
-        <Button className="button--onDark">Submit</Button>
+        <Button className="button--onDark">
+          {loading & !submitted
+            ? 'Loading'
+            : !loading & submitted
+            ? 'Submitted'
+            : 'Submit'}
+        </Button>
       </form>
     </div>
   );
