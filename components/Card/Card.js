@@ -1,5 +1,6 @@
 import styles from './Card.module.scss';
 import { Button } from '../Button/Button';
+import Link from 'next/link';
 
 const SingleCard = (props) => {
   return <div className={styles[`${props.className}`]}>{props.children}</div>;
@@ -53,25 +54,29 @@ const ContactCard = () => {
 const NavCard = (props) => {
   return (
     <ListCard className="card--nav">
-      <div className={styles['card__content']}>
-        <h3 className={styles['card__title']}>{props.title}</h3>
-        <a className={styles['card__link']} href="#">
-          View Projects
-          <span className={styles['arrow__right']}>
-            <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M1 1l4 4-4 4"
-                stroke="#E7816B"
-                strokeWidth="2"
-                fill="none"
-                fillRule="evenodd"
-              />
-            </svg>
-          </span>
+      <Link href={props.link}>
+        <a className={styles['card__link']}>
+          <div className={styles['card__content']}>
+            <h3 className={styles['card__title']}>{props.title}</h3>
+            <p className={styles['card__subtitle']}>
+              View Projects
+              <span className={styles['arrow__right']}>
+                <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M1 1l4 4-4 4"
+                    stroke="#E7816B"
+                    strokeWidth="2"
+                    fill="none"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              </span>
+            </p>
+          </div>
+          <div className={styles[`card__background--${props.bg}`]} />
+          <div className={styles['card__background__overlay']} />
         </a>
-      </div>
-      <div className={styles[`card__background--${props.bg}`]} />
-      <div className={styles['card__background__overlay']} />
+      </Link>
     </ListCard>
   );
 };
