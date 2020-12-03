@@ -7,34 +7,37 @@ import {
   YoutubeIcon,
 } from '../../static/assets/shared/desktop';
 import { ContactCard } from '../Card/Card';
+import Link from 'next/link';
 
 const Footer = (props) => {
   return (
     <footer className={styles['footer']}>
       <ul className={styles['footer__items--nav']}>
         <li>
-          <a href="/">
-            <img
-              className={styles['logo']}
-              src="/static/assets/shared/desktop/logo-light.png"
-              alt=""
-            />
-          </a>
+          <Link href="/">
+            <a>
+              <img
+                className={styles['logo']}
+                src="/static/assets/shared/desktop/logo-light.png"
+                alt=""
+              />
+            </a>
+          </Link>
         </li>
         <li>
-          <a className={styles['footer__link']} href="/company">
-            Our company
-          </a>
+          <Link href="/about">
+            <a className={styles['footer__link']}>Our company</a>
+          </Link>
         </li>
         <li>
-          <a className={styles['footer__link']} href="/locations">
-            Locations
-          </a>
+          <Link href="/locations">
+            <a className={styles['footer__link']}>Locations</a>
+          </Link>
         </li>
         <li>
-          <a className={styles['footer__link']} href="/contact">
-            Contact
-          </a>
+          <Link href="/contact">
+            <a className={styles['footer__link']}>Contact</a>
+          </Link>
         </li>
       </ul>
       <ul className={styles['footer__items--contact']}>
