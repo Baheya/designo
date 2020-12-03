@@ -3,16 +3,15 @@ import {
   Button,
   SingleCard,
   ListCard,
-  ContactCard,
   NavCard,
-  Footer,
+  FooterWithCard,
 } from '../components';
 import {
   ResourcefulIllustration,
   FriendlyIllustration,
   PassionateIllustration,
 } from '../static/assets/home/desktop';
-import { SmallCircleBg, ThreeCirclesBg } from '../static/assets/shared/desktop';
+import { SmallCircleBg } from '../static/assets/shared/desktop';
 import styles from './index.module.scss';
 
 export default function Home() {
@@ -45,9 +44,13 @@ export default function Home() {
         </section>
         <section>
           <ul className={styles['cards__wrapper']}>
-            <NavCard title="Web Design" bg="webDesign" />
-            <NavCard title="App Design" bg="appDesign" />
-            <NavCard title="Graphic Design" bg="graphicDesign" />
+            <NavCard title="Web Design" bg="webDesign" link="web-design" />
+            <NavCard title="App Design" bg="appDesign" link="app-design" />
+            <NavCard
+              title="Graphic Design"
+              bg="graphicDesign"
+              link="graphic-design"
+            />
           </ul>
         </section>
         <section>
@@ -97,11 +100,8 @@ export default function Home() {
             </ListCard>
           </ul>
         </section>
-        <section>
-          <ContactCard />
-        </section>
-        <Footer className="footer--with_card" />
       </div>
+      <FooterWithCard />
     </>
   );
 }
