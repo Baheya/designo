@@ -74,6 +74,12 @@
     display: flex;
     li {
       margin: 0 8px;
+      svg {
+        cursor: pointer;
+        :hover {
+          fill: $secondaryPeach;
+        }
+      }
     }
   }
 }
