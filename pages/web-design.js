@@ -1,11 +1,5 @@
 import Head from 'next/head';
-import {
-  HeroCard,
-  ProductCard,
-  ContactCard,
-  Footer,
-  NavCard,
-} from '../components';
+import { HeroCard, ProductCard, NavCard, FooterWithCard } from '../components';
 import styles from './web-design.module.scss';
 
 const WebDesign = () => {
@@ -59,15 +53,16 @@ const WebDesign = () => {
         </section>
         <section>
           <ul>
-            <NavCard title="App Design" bg="appDesign" />
-            <NavCard title="Graphic Design" bg="graphicDesign" />
+            <NavCard title="App Design" bg="appDesign" link="app-design" />
+            <NavCard
+              title="Graphic Design"
+              bg="graphicDesign"
+              link="graphic-design"
+            />
           </ul>
         </section>
-        <section>
-          <ContactCard />
-        </section>
-        <Footer className="footer--with_card" />
       </div>
+      <FooterWithCard />
     </>
   );
 };
